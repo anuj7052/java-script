@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyanmic heading</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        data = ['My name is Anuj','I am a full stack developer']
+        i=0
+        j=0
+        function title(){
+            document.getElementById('h1').innerHTML += data[i][j]
+            j++
+            if(j>data[i].length){
+                j=0
+                document.getElementById('h1').innerHTML = ""
+                i++
+                if(i>=data.length){
+                    i=0
+                }
+            }
+        }
+        setInterval(title,100)
+    </script>
+</body>
+</html>
